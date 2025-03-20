@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:islami/home_screen.dart';
+import 'package:islami/ui/home/home_screen.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   static const String routeName = "on_boarding_screen";
@@ -14,10 +14,10 @@ class OnBoardingScreen extends StatelessWidget {
           bodyWidget: Column(
             children: [
               SizedBox(height: 10),
-              Image.asset("assets/images/Group31.png", height: 170),
+              Image.asset("assets/images/Logo.png", height: 170),
               SizedBox(height: 40),
               Image.asset(
-                "assets/images/Group.png",
+                "assets/images/Group 41.png",
                 height: 300,
                 width: double.infinity,
               ),
@@ -41,7 +41,7 @@ class OnBoardingScreen extends StatelessWidget {
           bodyWidget: Column(
             children: [
               SizedBox(height: 10),
-              Image.asset("assets/images/Group31.png", height: 170),
+              Image.asset("assets/images/Logo.png", height: 170),
               SizedBox(height: 40),
               Image.asset("assets/images/kabba.png",
                   width: double.infinity, height: 300),
@@ -75,7 +75,7 @@ class OnBoardingScreen extends StatelessWidget {
           bodyWidget: Column(
             children: [
               SizedBox(height: 10),
-              Image.asset("assets/images/Group31.png", height: 170),
+              Image.asset("assets/images/Logo.png", height: 170),
               SizedBox(height: 40),
               Image.asset(
                 "assets/images/welcome.png",
@@ -113,7 +113,7 @@ class OnBoardingScreen extends StatelessWidget {
             children: [
               SizedBox(height: 10),
               Image.asset(
-                "assets/images/Group31.png",
+                "assets/images/Logo.png",
                 height: 170,
                 width: double.infinity,
               ),
@@ -153,7 +153,7 @@ class OnBoardingScreen extends StatelessWidget {
           bodyWidget: Column(
             children: [
               SizedBox(height: 10),
-              Image.asset("assets/images/Group31.png", height: 170),
+              Image.asset("assets/images/Logo.png", height: 170),
               SizedBox(height: 40),
               Image.asset(
                 "assets/images/radio.png",
