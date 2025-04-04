@@ -18,6 +18,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   late int selectedIndex = 0;
+  //list of tabs background
   List<String> backGroundImages = [
     AppAssets.quranBg,
     AppAssets.hadithBg,
@@ -25,6 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
     AppAssets.radioBg,
     AppAssets.timeBg,
   ];
+  //list of tabs screen
   List<Widget> tabsList = [
     QuranTab(),
     HadithTab(),
@@ -34,8 +36,11 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
   @override
   Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
+    var height = MediaQuery.of(context).size.height;
     return Stack(
       children: [
+        //background for every tab
         Image.asset(
           backGroundImages[selectedIndex],
           width: double.infinity,
@@ -43,35 +48,44 @@ class _HomeScreenState extends State<HomeScreen> {
           fit: BoxFit.cover,
         ),
         Scaffold(
-          bottomNavigationBar: Theme(
-            data:
-                Theme.of(context).copyWith(canvasColor: AppColors.primaryColor),
-            child: BottomNavigationBar(
-                currentIndex: selectedIndex,
-                onTap: (index) {
-                  selectedIndex = index;
-                  setState(() {});
-                },
-                items: [
-                  BottomNavigationBarItem(
-                      icon: buildItemInBottomNavBar(0, AppAssets.iconQuran),
-                      label: "Quran"),
-                  BottomNavigationBarItem(
-                      icon: buildItemInBottomNavBar(1, AppAssets.iconHadith),
-                      label: "Hadith"),
-                  BottomNavigationBarItem(
-                      icon: buildItemInBottomNavBar(2, AppAssets.iconSebha),
-                      label: "Sebha"),
-                  BottomNavigationBarItem(
-                      icon: buildItemInBottomNavBar(3, AppAssets.iconRadio),
-                      label: "Radio"),
-                  BottomNavigationBarItem(
-                      icon: buildItemInBottomNavBar(4, AppAssets.iconTime),
-                      label: "Time"),
-                ]),
-          ),
-          body: tabsList[selectedIndex],
-        ),
+            // bottomNavigationBar
+            bottomNavigationBar: Theme(
+              data: Theme.of(context)
+                  .copyWith(canvasColor: AppColors.primaryColor),
+              child: BottomNavigationBar(
+                  currentIndex: selectedIndex,
+                  onTap: (index) {
+                    selectedIndex = index;
+                    setState(() {});
+                  },
+                  items: [
+                    BottomNavigationBarItem(
+                        icon: buildItemInBottomNavBar(0, AppAssets.iconQuran),
+                        label: "Quran"),
+                    BottomNavigationBarItem(
+                        icon: buildItemInBottomNavBar(1, AppAssets.iconHadith),
+                        label: "Hadith"),
+                    BottomNavigationBarItem(
+                        icon: buildItemInBottomNavBar(2, AppAssets.iconSebha),
+                        label: "Sebha"),
+                    BottomNavigationBarItem(
+                        icon: buildItemInBottomNavBar(3, AppAssets.iconRadio),
+                        label: "Radio"),
+                    BottomNavigationBarItem(
+                        icon: buildItemInBottomNavBar(4, AppAssets.iconTime),
+                        label: "Time"),
+                  ]),
+            ),
+            body: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Image.asset(
+                  AppAssets.logo,
+                  height: height * 0.15,
+                ),
+                tabsList[selectedIndex],
+              ],
+            )),
       ],
     );
   }
