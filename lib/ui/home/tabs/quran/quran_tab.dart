@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami/providers/most_recentley_provider.dart';
 import 'package:islami/ui/home/tabs/quran/details/sura_content.dart';
 import 'package:islami/ui/home/tabs/quran/most_recently_widget.dart';
 import 'package:islami/ui/home/tabs/quran/quran_resources.dart';
@@ -10,6 +11,7 @@ import 'package:islami/utils/app_colors.dart';
 import 'package:islami/utils/app_styles.dart';
 import 'package:islami/utils/app_theme.dart';
 import 'package:islami/utils/shared_pref_utils.dart';
+import 'package:provider/provider.dart';
 
 class QuranTab extends StatefulWidget {
   QuranTab({super.key});
@@ -28,6 +30,7 @@ class _QuranTabState extends State<QuranTab> {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
+    var provider = Provider.of<MostRecentleyProvider>(context);
     return Expanded(
       child: Container(
         margin: EdgeInsets.all(width * 0.046),
@@ -88,7 +91,8 @@ class _QuranTabState extends State<QuranTab> {
                 itemBuilder: (context, index) {
                   return InkWell(
                     onTap: () {
-                      updateMostRecentIndcisList(filterIndeciesList[index]);
+                      provider.updateMostRecentIndcisList(
+                          filterIndeciesList[index]);
                       Navigator.pushNamed(
                           arguments: filterIndeciesList[index],
                           context,

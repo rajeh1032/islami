@@ -15,4 +15,12 @@ class AppAssets {
   static const String leftSuraIcon = "assets/images/left_sura_icon.png";
   static const String rightSuraIcon = "assets/images/right_sura_icon.png";
   static const String mosqueImage = "assets/images/mosque_image.png";
+  static const String mosqueBlackImage = "assets/images/mosque_black.png";
+  static const String hadithContainerBg =
+      "assets/images/hadith_container_bg.png";
+  static const String rightHadithCorner =
+      "assets/images/left_hadith_corner.png";
+  static const String leftHadithCorner =
+      "assets/images/rigth_hadith_corner.png";
+  static const String sebha = "assets/images/Sebha.png";
 }

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:islami/providers/most_recentley_provider.dart';
 import 'package:islami/ui/home/tabs/quran/quran_resources.dart';
 import 'package:islami/utils/app_assets.dart';
 import 'package:islami/utils/app_colors.dart';
 import 'package:islami/utils/app_styles.dart';
+import 'package:provider/provider.dart';
 
 class SuraContent extends StatefulWidget {
   static const String routeName = "SuraContent";
@@ -14,7 +16,14 @@ class SuraContent extends StatefulWidget {
 }
 
 class _SuraContentState extends State<SuraContent> {
+  late MostRecentleyProvider provider;
   List<String> verses = [];
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    provider.refreshMostRecentList();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +31,7 @@ class _SuraContentState extends State<SuraContent> {
     var height = MediaQuery.of(context).size.height;
     final index = ModalRoute.of(context)?.settings.arguments as int;
 
+    provider = Provider.of<MostRecentleyProvider>(context);
     if (verses.isEmpty) {
       loadSuraContent(index);
     }
@@ -90,8 +100,10 @@ class _SuraContentState extends State<SuraContent> {
     var suraContent =
         await rootBundle.loadString("assets/files/Suras/${index + 1}.txt");
     var suraLines = suraContent.split('\n');
-    setState(() {
-      verses = suraLines;
+    Future.delayed(Duration(milliseconds: 600), () {
+      setState(() {
+        verses = suraLines;
+      });
     });
   }
 }
