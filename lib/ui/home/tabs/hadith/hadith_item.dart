@@ -56,6 +56,7 @@ class _HadithItemState extends State<HadithItem> {
                           child: Text(
                             hadith?.title ?? "",
                             style: AppStyles.bold20Black,
+                            textAlign: TextAlign.center,
                           ),
                         ),
                         Image.asset(AppAssets.rightHadithCorner),

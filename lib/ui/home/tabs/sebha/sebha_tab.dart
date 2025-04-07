@@ -41,14 +41,16 @@ class _SebhaTabState extends State<SebhaTab> {
       SizedBox(
         height: height * 0.02,
       ),
+      Image.asset(
+        AppAssets.SebhaHead,
+      ),
       GestureDetector(
         onTap: () {
           HapticFeedback.mediumImpact();
           setState(() {
-            angle += 0.2;
             if (counter < 33) {
               counter += 1;
-              angle += 0.0000005;
+              angle += 0.03;
             } else {
               angle = 0;
 
@@ -58,10 +60,11 @@ class _SebhaTabState extends State<SebhaTab> {
           });
         },
         child: Stack(alignment: AlignmentDirectional.center, children: [
-          Transform.rotate(
-            angle: angle,
+          AnimatedRotation(
+            duration: const Duration(milliseconds: 400),
+            turns: angle,
             child: Image.asset(
-              AppAssets.sebha,
+              AppAssets.SebhaBody,
             ),
           ),
           Column(

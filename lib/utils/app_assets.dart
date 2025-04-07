@@ -22,5 +22,6 @@ class AppAssets {
       "assets/images/left_hadith_corner.png";
   static const String leftHadithCorner =
       "assets/images/rigth_hadith_corner.png";
-  static const String sebha = "assets/images/Sebha.png";
+  static const String SebhaBody = "assets/images/SebhaBody.png";
+  static const String SebhaHead = "assets/images/SEBHA_HEAD.png";
 }
