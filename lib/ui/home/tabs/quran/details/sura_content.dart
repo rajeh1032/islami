@@ -99,7 +99,7 @@ class _SuraContentState extends State<SuraContent> {
   void loadSuraContent(int index) async {
     var suraContent =
         await rootBundle.loadString("assets/files/Suras/${index + 1}.txt");
-    var suraLines = suraContent.split('\n');
+    var suraLines = suraContent.trim().split('\n');
     Future.delayed(Duration(milliseconds: 600), () {
       setState(() {
         verses = suraLines;
