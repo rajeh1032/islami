@@ -24,4 +24,9 @@ class AppAssets {
       "assets/images/rigth_hadith_corner.png";
   static const String SebhaBody = "assets/images/SebhaBody.png";
   static const String SebhaHead = "assets/images/SEBHA_HEAD.png";
+  static const String pauseIcon = "assets/images/pause_icon.png";
+  static const String playIcon = "assets/images/play_icon.png";
+  static const String speakerOn = "assets/images/speake_on.png";
+  static const String speakerOf = "assets/images/speaker_of.png";
+  static const String soudWave = "assets/images/sound_wave.png";
 }
