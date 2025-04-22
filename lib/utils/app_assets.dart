@@ -29,4 +29,9 @@ class AppAssets {
   static const String speakerOn = "assets/images/speake_on.png";
   static const String speakerOf = "assets/images/speaker_of.png";
   static const String soudWave = "assets/images/sound_wave.png";
+  static const String prayBg = "assets/images/pray_bg.png";
+  static const String prayTimeBg = "assets/images/praye_time_bg.png";
+  static const String silentSpeaker = "assets/images/silent_speaker.png";
+  static const String azkarEvining = "assets/images/even_azkar.png";
+  static const String azkarMorning = "assets/images/morninig_azkar.png";
 }
